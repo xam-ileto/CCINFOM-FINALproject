@@ -17,11 +17,11 @@ public class students {
     		// 3. Indicate a notice of successful connection
     		System.out.println("Connection successful!");
     		// 4. Prepare our INSERT Statement
-    		PreparedStatement pstmt = conn.prepareStatement("UPDATE students SET studentid=?, completename=?, degreeid=?");
+    		PreparedStatement pstmt = conn.prepareStatement("UPDATE students SET completename=?, degreeid=? WHERE studentid =?");
     		// 5. Supply the statement with values
-    		pstmt.setInt(1, studentid);
     		pstmt.setString(1, completename);
-    		pstmt.setString(1, degreeid);
+    		pstmt.setString(2, degreeid);
+    		pstmt.setInt(3, studentid);
     		// 6. Execute the SQL Statement
     		pstmt.executeUpdate();
     		pstmt.close();
