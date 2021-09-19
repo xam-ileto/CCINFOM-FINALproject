@@ -23,8 +23,7 @@ public class students {
     		pstmt.setString(1, completename);
     		pstmt.setString(1, degreeid);
     		// 6. Execute the SQL Statement
-    		ResultSet rs = pstmt.executeQuery();
-    		rs.close();
+    		pstmt.executeUpdate();
     		pstmt.close();
     		conn.close();
     		return 1;
